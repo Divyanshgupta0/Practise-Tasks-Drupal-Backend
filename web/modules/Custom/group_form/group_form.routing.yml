@@ -1,0 +1,7 @@
+group_form.form:
+  path: '/group-form'
+  defaults:
+    _form: '\Drupal\group_form\Form\GroupForm'
+    _title: 'Group Form'
+  requirements:
+    _permission: 'access content'

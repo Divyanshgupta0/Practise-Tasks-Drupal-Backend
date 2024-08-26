@@ -1,0 +1,7 @@
+user_otll_generator.form:
+  path: '/admin/config/otll'
+  defaults:
+    _form: '\Drupal\user_otll_generator\Form\UserOtllForm'
+    _title: 'User Otll Settings'
+  requirements:
+    _permission: 'administer otll configuration'

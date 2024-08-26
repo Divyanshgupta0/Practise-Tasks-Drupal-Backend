@@ -1,0 +1,8 @@
+custom_form:
+  version: 1.x
+  js:
+    js/custom_form.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.ajax

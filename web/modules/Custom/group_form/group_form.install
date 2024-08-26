@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Group Form module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function group_form_schema() {
+  $schema['group_data'] = [
+    'description' => 'Stores group data submitted through the form.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'group_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'label_1' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'value_1' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'label_2' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'value_2' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function group_form_uninstall() {
+  \Drupal::database()->schema()->dropTable('group_data');
+}

@@ -1,0 +1,4 @@
+group_data_block:
+  css:
+    theme:
+      css/group-data-block.css: {}

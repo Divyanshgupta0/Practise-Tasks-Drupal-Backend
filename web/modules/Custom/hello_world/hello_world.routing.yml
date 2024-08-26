@@ -1,0 +1,7 @@
+hello_world.sitecontent:
+  path: '/hellopage'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloWorld::DisplayName'
+    _title: "Hello User Page"
+  requirements:
+    _permission: 'access control'

@@ -1,0 +1,7 @@
+name: 'User Otll Generator'
+type: module
+description: 'A module to configure user profile settings.'
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:config
