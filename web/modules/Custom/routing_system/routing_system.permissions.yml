@@ -1,0 +1,4 @@
+access routing system permission:
+  title: 'access routing system'
+  description: 'To access the landing page'
+  restrict access: TRUE

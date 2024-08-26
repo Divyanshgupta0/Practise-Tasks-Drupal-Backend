@@ -1,0 +1,4 @@
+administer otll configurations:
+  title: 'Administer Otll Configurations'
+  description: 'Permission to configure settings for the Otll module.'
+  restrict access: true

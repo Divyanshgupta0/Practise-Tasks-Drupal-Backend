@@ -1,0 +1,7 @@
+name: 'RGB color'
+type: module
+description: 'This is to complete tasks of rgb color selector field'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:field

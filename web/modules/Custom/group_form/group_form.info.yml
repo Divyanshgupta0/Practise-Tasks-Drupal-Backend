@@ -1,0 +1,7 @@
+name: 'Group Form'
+type: module
+description: 'This is to create a custom form containing of group of fields and a block to display the data'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:block

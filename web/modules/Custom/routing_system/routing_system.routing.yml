@@ -1,0 +1,17 @@
+routing_system.example:
+  path: '/routing-system/example'
+  defaults:
+    _title: 'Welcome Page'
+    _controller: '\Drupal\routing_system\Controller\RoutingSystemController'
+  requirements:
+    _permission: 'access routing system'
+    _role: administrator+editor
+    _access: 'accessExample'
+routing_system.campaign_value:
+  path: '/campaign/value/{id}'
+  defaults:
+    _title: 'Campaign Value'
+    _controller: '\Drupal\routing_system\Controller\RoutingSystemController::campaignValue'
+  requirements:
+    _permission: 'access routing system'
+    id: \d+

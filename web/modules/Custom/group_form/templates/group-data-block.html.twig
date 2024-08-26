@@ -1,0 +1,20 @@
+<div class="group-data-block">
+  <h2>Flagship Programmes</h2>
+  <div class="programme-container">
+    {% for item in data %}
+      <div class="programme">
+        <h3>{{ item.group_name }}</h3>
+        <div class="stats">
+          <div class="stat">
+            <span class="label">{{ item.label_1 }}</span>
+            <span class="value">{{ item.value_1 }}</span>
+          </div>
+          <div class="stat">
+            <span class="label">{{ item.label_2 }}</span>
+            <span class="value">{{ item.value_2 }}</span>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

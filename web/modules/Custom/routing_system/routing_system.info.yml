@@ -1,0 +1,5 @@
+name: 'Routing System'
+type: module
+description: 'This module contains tasks of routing system ticket'
+package: Custom
+core_version_requirement: ^10 || ^11

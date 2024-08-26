@@ -1,0 +1,10 @@
+name: 'hello_world'
+type: module
+description: 'This is a test module'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - link:link
+  - views:views
+  - user:user
+  - drupal:node

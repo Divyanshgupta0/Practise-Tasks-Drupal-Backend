@@ -1,0 +1,11 @@
+name: 'Custom Form'
+type: module
+description: 'This is used to create custom forms'
+package: Custom
+core_version_requirement: ^10 || ^11
+js:
+  js/custom_form.js: {}
+dependencies:
+  - core/jquery
+  - core/drupal
+  - core/drupal.ajax

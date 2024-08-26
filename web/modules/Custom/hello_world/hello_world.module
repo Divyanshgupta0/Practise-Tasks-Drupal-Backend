@@ -1,0 +1,47 @@
+<?php
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_entity_view().
+ */
+function hello_world_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity instanceof Node) {
+    $nid = $entity->id();
+    $session = \Drupal::request()->getSession();
+
+    // Initialize the view count array if it doesn't exist.
+    if (!$session->has('node_view_count')) {
+      $session->set('node_view_count', []);
+    }
+
+    // Get the current view count for this node.
+    $view_count = $session->get('node_view_count');
+    if (!isset($view_count[$nid])) {
+      $view_count[$nid] = 0;
+    }
+
+    // Increment the view count.
+    $view_count[$nid]++;
+    $session->set('node_view_count', $view_count);
+
+    // Add the view count to the node render array.
+    $build['#view_count'] = $view_count[$nid];
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function hello_world_preprocess_node(array &$variables) {
+  if (isset($variables['elements']['#view_count'])) {
+    $variables['content']['view_count'] = [
+      '#markup' => t('This node has been viewed @count times in this session.', ['@count' => $variables['elements']['#view_count']]),
+      '#cache' => [
+        'contexts' => ['session'],
+        'tags' => ['node_view_count:' . $variables['node']->id()],
+        'max-age' => 0,
+      ],
+    ];
+  }
+}
